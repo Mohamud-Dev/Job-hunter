@@ -9,3 +9,4 @@ class Hiring:
         self.location=location
         self.language = language
         
+    
