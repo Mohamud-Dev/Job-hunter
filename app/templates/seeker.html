@@ -1,0 +1,25 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% include 'navbar.html'%}
+
+{% block content %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/seeker.css')}}">
+{% endblock %}
+<div class="container">
+	<br>
+	<div class="close">
+          <h1>Find jobs</h1>
+          </div>
+          <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search title" name="search"><input type="text" placeholder="city or state " name="search">
+            <button type="submit" size= 25%><i class="fa fa-search bg-info">Search Jobs</i></button>
+          </form>
+          </div>
+	</div>
+
+
+
+
+{% endblock %}
