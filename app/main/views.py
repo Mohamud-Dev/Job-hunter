@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for,abort,request
 from . import main
+from ..models import Hiring
 
 @main.route('/')
 def index():
