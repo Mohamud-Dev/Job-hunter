@@ -1,5 +1,5 @@
 
-   class Hiring:
+class Hiring:
     '''
     Article class to define Movie Objects
     '''

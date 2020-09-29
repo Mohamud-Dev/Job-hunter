@@ -11,7 +11,7 @@ def index():
 
 
 @main.route('/hire/new/', methods = ['GET','POST'])
-@login_required
+
 
 def new_hire():
     form = Hire()
