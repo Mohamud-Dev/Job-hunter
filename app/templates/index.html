@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 
-
+{% import 'macros.html' as macro%}
 {% block content %}
 
 
@@ -8,6 +8,17 @@
 <div class="container">
     <h1>{{title}}</h1>
     <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a>
+
+    <hr>
+    <form >
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <input type="text" name="word" placeholder="word">
+       
+        </div>
+        <input id="search" type="submit"  value="search" class="btn btn-default">
+    </form>
 </div>
+
+<b> {{ macro.displayResults(jobs)}}</b>
 
 {% endblock%}

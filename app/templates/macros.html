@@ -1,0 +1,16 @@
+{% macro displayResults(jobs_list) %}
+<div class="container">
+
+    {% for job in jobs_list %}
+    <div class="row">
+        <a href="{{job.url}}">{{job.title}}<br></a>
+        <p><b>ID:</b>{{job.id}}</p><br>
+        
+        <p><b>COMPANY:</b>{{job.company}}</p><br>
+        <p><b>LOCATION:</b>{{job.location}}</p><br>
+        <p><b> DESCRIPTION:</b> {{job.description}}  </p>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}
