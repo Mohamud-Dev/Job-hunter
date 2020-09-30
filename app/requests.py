@@ -44,7 +44,7 @@ def process_jobs(jobs_list):
 		description = job_item.get('description')
 		
 		
-		jobs_result = Jobs(id,title,company,url,location,description,description)
+		jobs_result = Jobs(id,title,company,url,location,location,description)
 		jobs_object.append(jobs_result)	
 		
 	return jobs_object

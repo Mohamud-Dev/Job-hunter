@@ -1,16 +1,25 @@
+{% extends 'base.html'%}
 {% macro displayResults(jobs_list) %}
 <div class="container">
 
     {% for job in jobs_list %}
-    <div class="row">
-        <a href="{{job.url}}">{{job.title}}<br></a>
-        <p><b>ID:</b>{{job.id}}</p><br>
-        
-        <p><b>COMPANY:</b>{{job.company}}</p><br>
-        <p><b>LOCATION:</b>{{job.location}}</p><br>
-        <p><b> DESCRIPTION:</b> {{job.description}}  </p>
-        <hr>
+    <div class="card-group">
+  
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-header">{{job.title}}</h5>
+      
+      <h6 class="card-subtitle mb-2 text-muted">company:{{job.company}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">located at:{{job.location|truncate(100)}}</h6>
+      <p class="card-text">{{job.description|truncate(250)}}</p>
+      <a href="{{job.url}}" class="btn btn-primary">Apply now</a>
+      
     </div>
+  </div> <br>
+</div>
+
     {% endfor %}
+    
 </div>
 {% endmacro %}
+

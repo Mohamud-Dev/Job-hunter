@@ -12,13 +12,13 @@
     <hr>
     <form >
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <input type="text" name="word" placeholder="word">
+        <input type="text" name="keyword" placeholder="word">
        
         </div>
         <input id="search" type="submit"  value="search" class="btn btn-default">
     </form>
+    {{ macro.displayResults(jobs)}}
 </div>
-
-<b> {{ macro.displayResults(jobs)}}</b>
+ 
 
 {% endblock%}
