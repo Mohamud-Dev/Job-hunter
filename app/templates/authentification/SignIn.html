@@ -5,7 +5,7 @@
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename ='auth.css')}}">
 {%endblock%}
-<div class="form bg-success signing">
+<div class="form bg-primary signing">
     <h6>Sign in</h6>
     {{wtf.quick_form(form)}}
 </div>
