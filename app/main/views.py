@@ -14,7 +14,7 @@ def index():
   
   
     jobs=get_jobs('all')
-    
+    title = 'welcome to Job Hunter'
     
     
     search_jobs = request.args.get('keyword')
@@ -22,7 +22,7 @@ def index():
     if search_jobs:
         return redirect(url_for('main.search',query=search_jobs))
     else:
-        return render_template('index.html',jobs=jobs)
+        return render_template('index.html',jobs=jobs,title=title)
 
 
 

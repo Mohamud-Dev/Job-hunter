@@ -42,9 +42,11 @@ def process_jobs(jobs_list):
 		url = job_item.get('url')
 		location = job_item.get('location')
 		description = job_item.get('description')
+        
+		time = job_item.get('type')
+        
 		
-		
-		jobs_result = Jobs(id,title,company,url,location,location,description)
+		jobs_result = Jobs(id,title,company,url,location,location,description,time)
 		jobs_object.append(jobs_result)	
 		
 	return jobs_object

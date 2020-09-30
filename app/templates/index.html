@@ -1,23 +1,29 @@
 {% extends 'base.html'%}
 
-{% import 'macros.html' as macro%}
+
 {% block content %}
 
 
 
 <div class="container">
-    <h1>{{title}}</h1>
-    <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a>
-
-    <hr>
+    <div class="jumbotron">
+       <h2> {{title}}</h2>
+    </div>
+  
+    <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a></button>
+    <br><br>
+  
+        
     <form >
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <input type="text" name="keyword" placeholder="word">
-       
-        </div>
-        <input id="search" type="submit"  value="search" class="btn btn-default">
+        <label for="keyword">search for jobs</label>
+        <input type="text" name="keyword" placeholder="e.g. python,java" class="form-control" required pattern="[0-9a-zA-Z]+" oninvalid="this.setCustomValidity('special characters are not allowed!')"
+        oninput="this.setCustomValidity('')">
+        
+        <input id="search" type="submit"  value="search" class="btn btn-default text-center">
     </form>
-    {{ macro.displayResults(jobs)}}
+    
+    
+  
 </div>
  
 
