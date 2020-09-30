@@ -25,3 +25,12 @@
 </div>
 {% endmacro %}
 
+{% macro displaylocations(jobs_list) %}
+
+{% for job in jobs_list %}
+<a href="{{job.url}}">{{job.location}}</a>
+
+{% endfor %}
+
+{% endmacro %}
+
