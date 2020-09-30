@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="jumbotron">
+       <h2> {{title}}</h2>
+    </div>
+  
+    <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a></button>
+    <br><br>
+  
+        
+    <form >
+        <label for="keyword">search for jobs</label>
+        <input type="text" name="keyword" placeholder="e.g. python,java" class="form-control" required pattern="[0-9a-zA-Z]+" oninvalid="this.setCustomValidity('special characters are not allowed!')"
+        oninput="this.setCustomValidity('')">
+        
+        <input id="search" type="submit"  value="search" class="btn btn-default text-center">
+    </form>
+    
+    
+  
+</div>
+ 
+
+{% endblock%}

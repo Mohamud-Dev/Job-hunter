@@ -1,10 +1,13 @@
+
 from flask import redirect, render_template, url_for,render_template, flash
 from .forms import SignIn, SignUp
 from ..models import User
-from flask_login import login_user,logout_user
 from . import auth
 from .. import db
-from flask_login import login_required
+from flask_login import login_user,logout_user,login_required
+from .forms import RegistrationForm
+
+
 
 
 @auth.route('/profile/signup', methods = ['GET','POST'])
@@ -55,3 +58,22 @@ def signout():
 
 
 
+@auth.route('/register', methods = ['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        new_user = User(username = form.username.data, email = form.email.data, password = form.password.data, bio = form.bio.data)
+        db.session.add(new_user)
+        db.session.commit()
+        login_user(new_user)
+        
+        return redirect(url_for('main.index', user = new_user))
+    
+    return render_template('auth/register.html', form = form)
+    
+    
+@auth.route('/logout')
+def logout():
+    logout_user
+    
+    return redirect(url_for('auth.register'))
