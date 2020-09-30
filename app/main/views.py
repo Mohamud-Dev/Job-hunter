@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for,abort,request
 from . import main
-from ..models import Hiring
+# from ..models import Hiring
 from .forms import HireForm
 
 @main.route('/')
