@@ -22,7 +22,7 @@ def signup():
         db.session.commit()
 
         return redirect(url_for('auth.signin'))
-    return render_template('authentification/Signup.html', form = form)
+    return render_template('authentification/register.html', form = form)
     
 @auth.route('/profile/signin', methods = ['GET','POST'])
 def signin():
@@ -38,7 +38,7 @@ def signin():
 
             login_user(user,form.Remember.data)
 
-            return redirect(url_for('blogs.postedblogs'))
+            #return redirect(url_for('blogs.postedblogs'))
 
         flash('Invalid username or password')
 
