@@ -1,0 +1,27 @@
+
+{% macro displayResults(jobs_list) %}
+<div class="container">
+
+    {% for job in jobs_list %}
+    <div class="card-group">
+  
+<div class="card card-info" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-header">{{job.company_logo}}{{job.title}}</h5><br>
+      
+      <h6 class="card-subtitle mb-2 text-muted"><b>company:</b> {{job.company}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted"><b>type:</b>   {{job.time}}</h6>
+
+      <h6 class="card-subtitle mb-2 text-muted"><b>located at:</b>  {{job.location|truncate(100)}}</h6>
+      <p class="card-text">{{job.description|truncate(250)}}</p>
+      <a href="{{job.url}}" class="btn btn-primary">Apply now</a>
+      
+    </div>
+  </div> <br>
+</div>
+
+    {% endfor %}
+    
+</div>
+{% endmacro %}
+
