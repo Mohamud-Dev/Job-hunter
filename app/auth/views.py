@@ -25,7 +25,7 @@ def signup():
         db.session.commit()
 
         return redirect(url_for('auth.signin'))
-    return render_template('authentification/register.html', form = form)
+    return render_template('auth/register.html', form = form)
     
 @auth.route('/profile/signin', methods = ['GET','POST'])
 def signin():
