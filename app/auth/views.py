@@ -19,3 +19,8 @@ def register():
     return render_template('auth/register.html', form = form)
     
     
+@auth.route('/logout')
+def logout():
+    logout_user
+    
+    return redirect(url_for('auth.register'))
