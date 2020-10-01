@@ -19,14 +19,14 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String)
     profile_pic = db.Column(db.String)
     bio = db.Column(db.String)
-     profile_pic_path = db.Column(db.String)
+    profile_pic_path = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def save_user(self):
         db.session.add(self)
         db.session.commit()
     
-     @property
+    @property
     def password(self):
         raise AttributeError('You cannot read password')
     
@@ -64,6 +64,8 @@ class Jobs:
         self.location = location
         self.description = description
         self.time = time
+     
+
    
 
        
