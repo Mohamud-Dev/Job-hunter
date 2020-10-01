@@ -3,6 +3,7 @@ from . import main
 # from ..models import Hiring
 from .forms import HireForm
 from ..requests import get_jobs, search_jobs
+from flask_login import login_required, current_user
 
 @main.route('/')
 def index():
@@ -27,6 +28,7 @@ def index():
 
 
 @main.route('/search/<query>')
+
 def search(query):
     '''
     View function to display the search results
@@ -41,7 +43,7 @@ def search(query):
 
 
 @main.route('/hire/new/', methods = ['GET','POST'])
-
+@login_required
 
 def new_hire():
     form = HireForm()

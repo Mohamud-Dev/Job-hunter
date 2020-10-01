@@ -40,3 +40,9 @@ class RegistrationForm(FlaskForm):
     bio = TextAreaField('Tell us about yourself', validators=[Required()])
     submit = SubmitField('SignUp')
 
+class LoginForm(FlaskForm):
+    email = StringField('Your Email Address',validators=[Required(),Email()])
+    password = PasswordField('Password',validators =[Required()])
+    remember = BooleanField('Remember me')
+    submit = SubmitField('Sign In')
+

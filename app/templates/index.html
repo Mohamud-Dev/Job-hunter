@@ -3,23 +3,32 @@
 
 {% block content %}
 
-
+<style>
+    .jumbotron{
+        background-color: lightskyblue;
+        height: 200px;
+    }
+    body{
+        background-color: lightslategrey;
+    }
+</style>
 
 <div class="container">
-    <div class="jumbotron">
-       <h2> {{title}}</h2>
+    <div class="jumbotron text-center">
+       <h2> Get job listings from allover the world from our large database of jobs and apply now.</h2>
+       <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a></button>
     </div>
   
-    <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a></button>
+    
     <br><br>
   
         
-    <form >
-        <label for="keyword">search for jobs</label>
+    <form class="text-center" >
+        <label for="keyword"><b>search for jobs</b> </label>
         <input type="text" name="keyword" placeholder="e.g. python,java" class="form-control" required pattern="[0-9a-zA-Z]+" oninvalid="this.setCustomValidity('special characters are not allowed!')"
         oninput="this.setCustomValidity('')">
         
-        <input id="search" type="submit"  value="search" class="btn btn-default text-center">
+        <input id="search" type="submit"  value="search" class="btn btn-info ">
     </form>
     
     

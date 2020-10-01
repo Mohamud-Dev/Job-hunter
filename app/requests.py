@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Jobs,Hiring
+from .models import Hiring,Jobs
 
 base_url=None
 
@@ -19,6 +19,7 @@ def get_jobs(category):
     with urllib.request.urlopen(base_url) as url:
         get_jobs_data = url.read()
         get_jobs_response = json.loads(get_jobs_data)
+        
 
         jobs_results = None
 
@@ -36,18 +37,16 @@ def process_jobs(jobs_list):
 	'''
 	jobs_object = []
 	for job_item in jobs_list:
-		id = job_item.get('id')
-		title = job_item.get('title')
-		company = job_item.get('company')
-		url = job_item.get('url')
-		location = job_item.get('location')
-		description = job_item.get('description')
-        
-		time = job_item.get('type')
-        
-		
-		jobs_result = Jobs(id,title,company,url,location,location,description,time)
-		jobs_object.append(jobs_result)	
+	    id = job_item.get('id')
+	    time = job_item.get('type')
+	    title = job_item.get('title')
+	    company = job_item.get('company')
+	    url = job_item.get('url')
+	    location = job_item.get('location')
+	    description = job_item.get('description')
+     
+	    jobs_result = Jobs(id,title,company,url,location,location,description,time)
+	    jobs_object.append(jobs_result)	
 		
 	return jobs_object
 
@@ -57,6 +56,7 @@ def search_jobs(query):
     with urllib.request.urlopen(search_jobs_url) as url:
         search_jobs_data = url.read()
         search_jobs_response = json.loads(search_jobs_data)
+        print('what the f')
 
         search_jobs_results = None
 
