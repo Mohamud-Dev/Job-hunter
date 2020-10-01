@@ -4,12 +4,15 @@
 {% block content %}
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
     .jumbotron{
         background-color: hsl(201, 100%, 36%,0.8);
+        font-family: 'Sansita Swashed', cursive;
         height: 200px;
         color: #caf0f8;
     }
     body{
+        font-family: 'Sansita Swashed', cursive;
         background-color: lightslategrey;
         background-image: url(../static/back.jpg);
         background-size: cover;
@@ -30,7 +33,7 @@
   
         
     <form class="text-center" >
-        <label for="keyword"><b style="color: linen;">search for jobs</b> </label>
+        <label for="keyword"><b style="color: linen;">search  for  jobs</b> </label>
         <input type="text" name="keyword" placeholder="e.g. python,java" class="form-control" required pattern="[0-9a-zA-Z]+" oninvalid="this.setCustomValidity('special characters are not allowed!')"
         oninput="this.setCustomValidity('')">
         <br>

@@ -6,6 +6,7 @@ from ..requests import get_jobs, search_jobs, upload
 from flask_login import login_required, current_user
 from .. import db, photos
 
+
 @main.route('/')
 def index():
 
@@ -69,12 +70,18 @@ def profile(uname):
     return render_template("profile/profile.html", user = user)
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
+
 @login_required
+
 def update_pic(uname):
+    import cloudinary
+    import cloudinary.uploader
+    import cloudinary.api
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
-        path = f'images/{filename}'
+        filename = request.files['photo']
+        upload = cloudinary.uploader.upload(filename)
+        path = upload.get('url')
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))

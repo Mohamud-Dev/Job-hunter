@@ -8,9 +8,16 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename = 'profile.css')}}">
 {%endblock%}
+<style>
+  body{
+    background-color: #0096c7;
+  }
+</style>
+
+<div class="container">
 <div class="heading">
 <hr>
-<h1 class="pagetitle">Profile</h1>
+<h1 class="pagetitle"> {{user.username}}</h1>
 <hr>
 </div>
 <div class="row">
@@ -18,7 +25,7 @@
 
     <div class="col-md-6">
         {% if user.profile_pic_path %}
-        <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+        <img src="{{user.profile_pic_path}}" alt="" class="img-thumbnail">
         {%else%}
         <p>No profile picture</p>
         {% endif %}
@@ -26,19 +33,19 @@
         <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
     
           <input type="file"  name="photo" class="form-control" required><br>
-          <button  class="btn btn-success" type="submit">submit</button>
+          <button  class="btn btn-success" type="submit">upload profile pic</button>
         </form>
           {% endif %}
     </div>
-    <div class="col-md-5 bio card">
-        <h2>{{user.username}}</h2>
-        <h4>Bio</h4>
+    <div class="col-md-5 bio">
+        <b>Bio:</b>
         {%if user.bio%}
         <p>{{user.bio}}</p>
         {%else%}
-        <p>I am {{user.username}} and I will Update Bio Soon </p>
+        <p>no bio for {{user.username}}  </p>
         {%endif%}
-        <p><a class="btn btn-danger" href="{{url_for('main.updatebio', uname = user.username)}}">Update Your Bio.</a></p>
+        <p><a class="btn btn-primary" href="{{url_for('main.updatebio', uname = user.username)}}">Update bio.</a></p>
     </div>
+</div>
 </div>
 {%endblock%}

@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template, request
+import cloudinary
 
 
 class Config:
@@ -12,6 +13,9 @@ class Config:
     JOBS_URL='https://jobs.github.com/positions/{}.json?markdown=true'
     
     UPLOADED_PHOTOS_DEST ='app/static/images'
+
+    cloudinary.config(cloud_name='dwlytmlhu',api_key='182266419519629',api_secret='BfHpgTOaL1RQWUiut_mVH9xfWj4')
+ 
  
    
 

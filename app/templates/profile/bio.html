@@ -8,10 +8,16 @@
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename ='profile.css')}}">
 {%endblock%}
+<style>
+    body{
+        background-color: #0096c7;
+    }
+</style>
 <div class="form">
 {{wtf.quick_form(form)}}
+<a class="back btn btn-primary" href="{{url_for('main.profile', uname = user.username)}}">Back To Profile</a>
 </div>
-<p><a class="back btn btn-danger" href="{{url_for('main.profile', uname = user.username)}}">Back To Profile</a></p>
+
 
 
 {%endblock%}

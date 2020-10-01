@@ -4,19 +4,23 @@
 
 {% block content%}
 <style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
    body{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
        background-color: lightslategrey;
        background-image: url(../static/back.jpg);
        background-size: cover;
      
    }
+
+ 
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
     <h3 style="color: linen;">{{title}}, Found {{ jobs| count }} jobs </h3><hr>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
     <div class="dropdown"> 
         <button type="button" 
             class="btn btn-primary" 
