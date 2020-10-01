@@ -56,13 +56,15 @@ class Jobs:
     '''
     Jobs class to define articles objects
     '''
-    def __init__(self,id,time,title,company,url,location,description):
+    def __init__(self,id,time,title,company,company_logo,url,location,date,description):
         self.id = id
         self.time = time
         self.title = title
         self.company = company
+        self.company_logo = company_logo
         self.url = url
         self.location = location
+        self.date = date
         self.description = description
        
      
