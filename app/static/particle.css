@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*background-color: #147be9;*/
+    /*background-image: url("../assets/photo-.jpeg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#particles-js {
+background-repeat: no-repeat;
+background-size: cover;
+}
