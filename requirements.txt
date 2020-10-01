@@ -1,7 +1,6 @@
 aadict==0.2.3
 alembic==1.4.3
 appdirs==1.4.4
-apturl==0.5.2
 asset==0.6.13
 astroid==2.4.2
 attrs==20.2.0
