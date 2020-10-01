@@ -13,8 +13,9 @@
 
 .account a{
     color: rgb(58, 50, 41);
+    background:  #1676a6;
 }
 
 .signing{
-    box-shadow: 5px 5px 50px rgb(46, 37, 37);
+    box-shadow: #010f16 0 0 20px;
 }
