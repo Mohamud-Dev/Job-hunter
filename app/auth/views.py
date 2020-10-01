@@ -53,7 +53,7 @@ def profile():
 
     #logout_user()
 
-    return redirect(url_for('profile.profile.html'))
+    return redirect(url_for('profile/profile.html'))
 
 
 
