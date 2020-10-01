@@ -51,6 +51,8 @@ class Hiring:
         self.id = id
         self.location=location
         self.language = language
+        
+    
 
 class Jobs:
     '''
