@@ -44,8 +44,10 @@ def process_jobs(jobs_list):
 	    url = job_item.get('url')
 	    location = job_item.get('location')
 	    description = job_item.get('description')
+        
+        
      
-	    jobs_result = Jobs(id,title,company,url,location,location,description,time)
+	    jobs_result = Jobs(id,time,title,company,url,location,description)
 	    jobs_object.append(jobs_result)	
 		
 	return jobs_object
@@ -56,13 +58,13 @@ def search_jobs(query):
     with urllib.request.urlopen(search_jobs_url) as url:
         search_jobs_data = url.read()
         search_jobs_response = json.loads(search_jobs_data)
-        print('what the f')
+        
 
         search_jobs_results = None
 
         
         
         search_jobs_results = process_jobs(search_jobs_response)
-
+        print(search_jobs_results)
 
     return search_jobs_results

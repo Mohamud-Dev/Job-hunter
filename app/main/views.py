@@ -38,6 +38,7 @@ def search(query):
     query_list = query.split(" ")
     query_format = "+".join(query_list)
     searched_jobs = search_jobs(query_format)
+    print(searched_jobs)
     title = f'search results for {query}'
     return render_template('jobs.html',title=title,jobs = searched_jobs)
 
