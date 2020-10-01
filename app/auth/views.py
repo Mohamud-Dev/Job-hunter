@@ -48,13 +48,12 @@ def signin():
     
     return render_template('authentification/SignIn.html', form = form)
 
-#@auth.route('/profile/signout', methods = ['GET','POST'])
-#@login_required
-#def signout():
+@auth.route('/profile/profile', methods = ['GET','POST'])
+def profile():
 
     #logout_user()
 
-   # return redirect(url_for('auth.SignIn'))
+    return redirect(url_for('profile.profile.html'))
 
 
 
