@@ -5,8 +5,9 @@
 
 <style>
     .jumbotron{
-        background-color: lightskyblue;
+        background-color: hsl(201, 100%, 36%,0.8);
         height: 200px;
+        color: #caf0f8;
     }
     body{
         background-color: lightslategrey;
@@ -18,7 +19,7 @@
 <div class="container">
     <div class="jumbotron text-center">
        <h2> Get job listings from allover the world from our large database of jobs and apply now.</h2>
-       <button id="add" class="btn btn-outline-success"><a  href="/hire/new/"> Hire Now </a></button>
+       <button id="add" class="btn btn-primary"><a  href="/hire/new/"> Hire Now </a></button>
     </div>
   
     
@@ -29,8 +30,8 @@
         <label for="keyword"><b>search for jobs</b> </label>
         <input type="text" name="keyword" placeholder="e.g. python,java" class="form-control" required pattern="[0-9a-zA-Z]+" oninvalid="this.setCustomValidity('special characters are not allowed!')"
         oninput="this.setCustomValidity('')">
-        
-        <input id="search" type="submit"  value="search" class="btn btn-info ">
+        <br>
+        <input id="search" type="submit"  value="search" class="btn btn-primary ">
     </form>
     
     
