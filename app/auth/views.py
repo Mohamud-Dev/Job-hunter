@@ -10,7 +10,7 @@ from .forms import RegistrationForm
 
 
 
-@auth.route('/profile/signup', methods = ['GET','POST'])
+@auth.route('/auth/register', methods = ['GET','POST'])
 def signup():
     form = SignUp()
 
@@ -24,10 +24,10 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
 
-        return redirect(url_for('auth.signin'))
+        return redirect(url_for('authentification.SignIn'))
     return render_template('auth/register.html', form = form)
     
-@auth.route('/profile/signin', methods = ['GET','POST'])
+@auth.route('/authentification/SignIn', methods = ['GET','POST'])
 def signin():
     
     form = SignIn()
@@ -48,13 +48,13 @@ def signin():
     
     return render_template('authentification/SignIn.html', form = form)
 
-@auth.route('/profile/signout', methods = ['GET','POST'])
-@login_required
-def signout():
+#@auth.route('/profile/signout', methods = ['GET','POST'])
+#@login_required
+#def signout():
 
-    logout_user()
+    #logout_user()
 
-    return redirect(url_for('auth.signin'))
+   # return redirect(url_for('auth.SignIn'))
 
 
 
