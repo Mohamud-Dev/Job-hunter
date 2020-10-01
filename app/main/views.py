@@ -57,3 +57,5 @@ def new_hire():
 
         return redirect(url_for('main.index'))
     return render_template('hire.html',form=form)
+
+
