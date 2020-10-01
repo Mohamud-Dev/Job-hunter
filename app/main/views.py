@@ -58,4 +58,11 @@ def new_hire():
         return redirect(url_for('main.index'))
     return render_template('hire.html',form=form)
 
+@main.route('/profile/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
 
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user = user)
