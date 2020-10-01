@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+{%block styles%}
+{{super()}}
+
+<link rel="stylesheet" href="{{url_for('static', filename = 'profile.css')}}">
+{%endblock%}
+<div class="heading">
+<hr>
+<h1 class="pagetitle">Profile</h1>
+<hr>
+</div>
+<div class="row">
+
+
+    <div class="col-md-6">
+        {%if current_user.profile_pic%}
+        <img src="{{url_for('static', filename = user.profile_pic)}}" alt="">
+        {%else%}
+
+        <img src="{{url_for('static', filename = 'photos/pexels-annie-untalan-4015334.jpg')}}" alt="">
+        {%endif%}
+
+
+        <form action="{{url_for('profile.updateprofile', uname = user.username)}}" , method="post" ,
+            enctype="multipart/form-data">
+            <h5>Update profile</h5>
+            <input type="file" name='photo' required>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="col-md-5 bio card">
+        <h2>{{user.username}}</h2>
+        <h4>Bio</h4>
+        {%if user.bio%}
+        <p>{{user.bio}}</p>
+        {%else%}
+        <p>I am {{user.username}} and I will Update Bio Soon </p>
+        {%endif%}
+        <p><a class="btn btn-danger" href="{{url_for('profile.updatebio', uname = user.username)}}">You Can Update Your Bio.</a></p>
+    </div>
+</div>
+{%endblock%}
