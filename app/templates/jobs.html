@@ -6,10 +6,13 @@
 <style>
    body{
        background-color: lightslategrey;
+       background-image: url(../static/back.jpg);
+       background-size: cover;
+     
    }
 </style>
 <div class="container">
-    <h3>{{title}}, Found {{ jobs| count }} jobs </h3><hr>
+    <h3 style="color: linen;">{{title}}, Found {{ jobs| count }} jobs </h3><hr>
     {{ macro.displayResults(jobs)}}
 
 </div>
