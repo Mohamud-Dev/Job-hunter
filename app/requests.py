@@ -2,6 +2,7 @@ import urllib.request,json
 from .models import Hiring,Jobs
 from time import ctime
 from datetime import datetime
+import re
 
 base_url=None
 
@@ -60,10 +61,16 @@ def process_jobs(jobs_list):
         company_logo = job_item.get('company_logo')
         url = job_item.get('url')
         location = job_item.get('location')
-        date = datetime.strptime (job_item.get('created_at'), '%a %b %d %H:%M:%S %Z %Y')
-        description = job_item.get('description')
+        date =  datetime.strptime (job_item.get('created_at'), '%a %b %d %H:%M:%S %Z %Y')
+        description = remove_html_tags(job_item.get('description'))
 
         jobs_result = Jobs(id,time,title,company,company_logo,url,location,date,description)
         jobs_object.append(jobs_result)
     
     return jobs_object
+
+def remove_html_tags(text):
+    """Remove html tags from a string"""
+
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
