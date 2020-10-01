@@ -1,0 +1,64 @@
+body{
+    margin:0;
+    padding:0;
+    }
+    .container1 {
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .login-text{
+        font-family: 'Quicksand', sans-serif;
+    }
+    #login{
+    font-weight:bold;
+    }
+    #vick {
+        align-self: center;
+        background: #06a1ee;
+        width: 400px;
+        height: 400px;
+        cursor: ew-resize;
+        position: absolute;
+        border-radius: 15px;
+        /*elevation: 30deg;*/
+    }
+    #option-signup{
+        margin-top:20px;
+        }
+        .division {
+            align-items: center;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #centered-card{
+        margin:0;
+        padding:0;
+        }
+        
+        
+        #hellobutton {
+        margin-top:20px;
+            border: 0;
+            background:  #1676a6;
+            /*elevation: 20deg;*/
+            width: 80px;
+            height: 40px;
+            box-shadow: #010f16 0 0 20px;
+            border-radius: 5px;
+            color: #06a1ee;
+            font-size: 18px;
+            justify-content: right;
+        }
+        
+        #hellobutton:hover {
+            background-color: #1676a6;
+        }
+        
+        
+        /*Home styles*/
+        .container {
+          max-width: 960px;
+        }

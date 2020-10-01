@@ -1,0 +1,21 @@
+.form{
+    padding: 0.5%;
+    margin: 4%;
+    margin-left: 9%;
+    border-radius: 25px;
+    width: 75%;
+}
+
+.account{
+    font-style: oblique;
+    margin: 3%;
+}
+
+.account a{
+    color: rgb(58, 50, 41);
+    background:  #1676a6;
+}
+
+.signing{
+    box-shadow: #010f16 0 0 20px;
+}
