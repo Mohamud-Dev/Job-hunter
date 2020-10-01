@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+{% block content%}
+<style>
+   body{
+       background-color: lightslategrey;
+   }
+</style>
+<div class="container">
+    <h3>{{title}}, Found {{ jobs| count }} jobs </h3><hr>
+    {{ macro.displayResults(jobs)}}
+
+</div>
+
+
+{% endblock %}

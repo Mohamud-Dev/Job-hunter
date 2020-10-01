@@ -4,10 +4,12 @@ import os
 class Config:
 
     
-    SECRET_KEY = os.urandom(32)
-    @staticmethod
-    def init_app(app):
-        pass
+    SECRET_KEY = '123erty'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:Myfamily@localhost/jobhunter'
+    BASE_URL='https://jobs.github.com/positions.json?description={}'
+    JOBS_URL='https://jobs.github.com/positions/{}.json?markdown=true'
+    
+   
 
 
 class ProdConfig(Config):
