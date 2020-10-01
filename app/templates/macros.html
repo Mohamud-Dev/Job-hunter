@@ -1,5 +1,11 @@
 
 {% macro displayResults(jobs_list) %}
+<style>
+  .pic{
+    width: 60px;
+    height: 40px;
+  }
+</style>
 <div class="container">
 
     {% for job in jobs_list %}
@@ -7,7 +13,7 @@
   
 <div class="card card-info" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-header">{{job.company_logo}}{{job.title}}</h5><br>
+      <h5 class="card-header"><img class="pic" src="{{job.company_logo}}" alt="logo"> {{job.title}}</h5><br>
       
       <h6 class="card-subtitle mb-2 text-muted"><b>company:</b> {{job.company}}</h6>
       <h6 class="card-subtitle mb-2 text-muted"><b>type:</b>   {{job.time}}</h6>
@@ -15,11 +21,12 @@
       <h6 class="card-subtitle mb-2 text-muted"><b>located at:</b>  {{job.location|truncate(100)}}</h6>
       <p class="card-text">{{job.description|truncate(250)}}</p>
       <a href="{{job.url}}" class="btn btn-primary">Apply now</a>
-      <footer class="blockquote-footer">posted on  <cite title="Source Title">{{job.created_at}}</cite></footer>
+      <footer class="blockquote-footer">posted on  <cite title="Source Title">{{job.date}}</cite></footer>
       
     </div>
-  </div> <br>
+  </div> 
 </div>
+<br>
 
     {% endfor %}
     
