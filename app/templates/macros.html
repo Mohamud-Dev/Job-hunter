@@ -33,3 +33,16 @@
 </div>
 {% endmacro %}
 
+{% macro displaylocale(jobs_list) %}
+
+{% for job in jobs_list %}
+
+<ul>
+  <li><a href=""> {{job.location}}</a></li>
+</ul>
+{% endfor %}
+
+{% endmacro %}
+
+
+

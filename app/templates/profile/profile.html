@@ -25,7 +25,7 @@
         {%endif%}
 
 
-        <form action="{{url_for('profile.updateprofile', uname = user.username)}}" , method="post" ,
+        <form action="{{url_for('main.update_pic', uname = user.username)}}" , method="post" ,
             enctype="multipart/form-data">
             <h5>Update profile</h5>
             <input type="file" name='photo' required>
@@ -40,7 +40,7 @@
         {%else%}
         <p>I am {{user.username}} and I will Update Bio Soon </p>
         {%endif%}
-        <p><a class="btn btn-danger" href="{{url_for('profile.updatebio', uname = user.username)}}">You Can Update Your Bio.</a></p>
+        <p><a class="btn btn-danger" href="{{url_for('main.updatebio', uname = user.username)}}">Update Your Bio.</a></p>
     </div>
 </div>
 {%endblock%}

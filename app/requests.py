@@ -3,13 +3,17 @@ from .models import Hiring,Jobs
 from time import ctime
 from datetime import datetime
 import re
+import cloudinary
 
-base_url=None
+
+
 
 
 def configure_request(app):
-    global base_url
+    global base_url,key,cloud_name,secret
     base_url = app.config["BASE_URL"]
+  
+
 
 	
 
@@ -74,6 +78,11 @@ def remove_html_tags(text):
 
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
+
+def upload(photo):
+    cloudinary.uploader.upload(photo)
+
+    
 
 
         

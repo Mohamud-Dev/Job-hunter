@@ -12,7 +12,31 @@
    }
 </style>
 <div class="container">
+    <div class="row">
+        <div class="col-md-8">
     <h3 style="color: linen;">{{title}}, Found {{ jobs| count }} jobs </h3><hr>
+        </div>
+        <div class="col-md-4">
+    <div class="dropdown"> 
+        <button type="button" 
+            class="btn btn-primary" 
+            id="dropDownButton" 
+            data-toggle="dropdown"
+            aria-expanded="false"> 
+            Locations 
+            <span class="caret"></span> 
+        </button> 
+          
+        <ul class="dropdown-menu" 
+            aria-labelledby="dropDownButton"> 
+           
+                <li>{{ macro.displaylocale(jobs)}}</li> 
+         
+           
+        </ul> 
+    </div> 
+    </div>
+    </div>
     {{ macro.displayResults(jobs)}}
 
 </div>

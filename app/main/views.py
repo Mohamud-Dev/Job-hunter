@@ -1,8 +1,8 @@
 from flask import render_template, redirect, url_for,abort,request
 from . import main
-# from ..models import Hiring
-from .forms import HireForm
-from ..requests import get_jobs, search_jobs
+from ..models import Hiring, User
+from .forms import HireForm, UpdateProfile, bio
+from ..requests import get_jobs, search_jobs, upload
 from flask_login import login_required, current_user
 
 @main.route('/')
@@ -66,3 +66,28 @@ def profile(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
+
+@main.route('/user/<uname>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(uname):
+    user = User.query.filter_by(username = uname).first()
+    if 'photo' in request.files:
+        upload(photo)
+        
+    return redirect(url_for('main.profile',uname=uname))
+
+
+@main.route('/user/update/bio/<uname>', methods= ['GET', 'POST'])
+@login_required
+def updatebio(uname):
+    user = User.query.filter_by(username = uname).first()
+    form =bio()
+    if form.validate_on_submit():
+        User.bio = form.bio.data
+        
+        db.session.commit()
+
+        return redirect(url_for('main.Profile', uname = user.username))
+
+    return render_template ('profile/bio.html', form =form, user = user)
+    
