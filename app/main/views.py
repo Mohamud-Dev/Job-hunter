@@ -4,6 +4,7 @@ from ..models import Hiring, User
 from .forms import HireForm, UpdateProfile, bio
 from ..requests import get_jobs, search_jobs, upload
 from flask_login import login_required, current_user
+from .. import db, photos
 
 @main.route('/')
 def index():
@@ -72,8 +73,10 @@ def profile(uname):
 def update_pic(uname):
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
-        upload(photo)
-        
+        filename = photos.save(request.files['photo'])
+        path = f'images/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
 
@@ -87,7 +90,7 @@ def updatebio(uname):
         
         db.session.commit()
 
-        return redirect(url_for('main.Profile', uname = user.username))
+        return redirect(url_for('main.profile', uname = user.username))
 
     return render_template ('profile/bio.html', form =form, user = user)
     

@@ -11,10 +11,7 @@ class Config:
     BASE_URL='https://jobs.github.com/positions.json?description={}'
     JOBS_URL='https://jobs.github.com/positions/{}.json?markdown=true'
     
-    CLOUDINARY_URL='cloudinary://182266419519629:BfHpgTOaL1RQWUiut_mVH9xfWj4@dwlytmlhu'
-    cloud_name='dwlytmlhu'
-    cloud_Key='182266419519629'
-    API_Secret='BfHpgTOaL1RQWUiut_mVH9xfWj4'
+    UPLOADED_PHOTOS_DEST ='app/static/images'
  
    
 

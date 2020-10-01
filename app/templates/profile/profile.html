@@ -17,20 +17,18 @@
 
 
     <div class="col-md-6">
-        {%if current_user.profile_pic%}
-        <img src="{{url_for('static', filename = user.profile_pic)}}" alt="">
+        {% if user.profile_pic_path %}
+        <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
         {%else%}
-
-        <img src="{{url_for('static', filename = 'photos/pexels-annie-untalan-4015334.jpg')}}" alt="">
-        {%endif%}
-
-
-        <form action="{{url_for('main.update_pic', uname = user.username)}}" , method="post" ,
-            enctype="multipart/form-data">
-            <h5>Update profile</h5>
-            <input type="file" name='photo' required>
-            <input type="submit">
+        <p>No profile picture</p>
+        {% endif %}
+        {% if user == current_user %}
+        <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+    
+          <input type="file"  name="photo" class="form-control" required><br>
+          <button  class="btn btn-success" type="submit">submit</button>
         </form>
+          {% endif %}
     </div>
     <div class="col-md-5 bio card">
         <h2>{{user.username}}</h2>
