@@ -28,7 +28,7 @@ A flask project built mostly with python to allow users to create profiles, sear
 
 ## Link to live page
 
-Find the live page [here](https://group-job-hunter.herokuapp.com/)
+Find the live page [here](https://job-hunter5.herokuapp.com/)
 
 ## Technologies Used
  1. ubuntu linux for host OS
