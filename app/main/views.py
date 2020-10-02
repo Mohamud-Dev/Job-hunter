@@ -93,8 +93,8 @@ def updatebio(uname):
     user = User.query.filter_by(username = uname).first()
     form =bio()
     if form.validate_on_submit():
-        User.bio = form.bio.data
-        
+        user.bio = form.bio.data
+        db.session.add(user)
         db.session.commit()
 
         return redirect(url_for('main.profile', uname = user.username))
